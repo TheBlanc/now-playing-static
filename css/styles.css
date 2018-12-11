@@ -59,7 +59,7 @@ figure {
 .site-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
+
   right: 0;
   width: 100%;
   z-index: 100;
@@ -103,6 +103,7 @@ figure {
 /* MOVIE styles */
 .movie {
   position: relative;
+
 }
 
 .movie-poster,
@@ -196,70 +197,77 @@ figure {
   margin: 0;
 }
 
+@media only screen and (min-width:768px) {
 
 
-/****************** RESPONSIVE  *******************/
-@media (min-width: 750px) {
-  .movie-overview {
-    display: block;
-  }
-  .site-nav {
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 75px;
-    z-index: 100;
-    background-color: #ffffff;
-  }
-  .site-nav-item {
-    float: none;
-    height: 60px;
-    width: 100%;
-    padding: 0.75em;
-    font-family: "Montserrat", "Source Code Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.6em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .fa {
-    display: block;
-  }
-  main {
-    padding-left: 75px;
+       .site-nav-list{
+         display: grid;
+         position: absolute;
+         top:81px;
+       }
+       .site-nav {
+        width: 5%;
+        height:100%;
+        left: 20px;
 
-  }
-  .site-logo {
-    position: fixed;
-    bottom: 15px;
-    top: auto;
-    left: 5px;
-    width: 65px;
-    height: 60px;
-    margin: 0;
-    z-index: 101;
-  }
+       }
+
+       .site-nav-item {
+         float: none;
+         width: inherit;
+         margin-top: 2em;
+         margin-bottom: 2em;
+
+       }
+
+       .movie {
+         left:111px;
+
+     }
+     .movie-overview {
+       display: inline-block;
+       width: 90%
+     }
+
+     .site-logo {
+       z-index : 104;
+       width:53px;
+       top: 20px;
+       left: 30px;
+       position: fixed;
+
+}
 }
 
-@media (min-width: 992px) {
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .wrapper .movie-overview {
+@media screen and ( min-width: 992px ) {
+  .movie-overview, .movie-backdrop {
     display: none;
-  }
+}
 
-  .wrapper .movie-poster {
-    display: block;
-  }
-  .wrapper .movie-backdrop {
-    display: none;
-  }
-  .movie {
-    background-color: #cfd6e6;
-  }
-  .ducks {
-    padding-top: 3px;
-  }
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.movie-poster {
+  display:inline-block;
+}
+
+.movie:first-child .movie-overview {
+    display: block;}
+
+article:first-child {
+      display: block;
+      grid-column: 1/4;
+    }
+
+article:first-child .movie-poster {
+  display: none; }
+
+article:first-child .movie-backdrop {
+  display: block;
+  width: 130%;
+  ;
+}
 }
