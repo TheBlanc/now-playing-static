@@ -54,6 +54,11 @@ figure {
   height: 80px;
   margin: 0;
   z-index: 100;
+
+}
+
+.site-logo-image{
+border-radius: 50%;
 }
 
 .site-nav {
@@ -62,7 +67,7 @@ figure {
 
   right: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
   background-color: #ffffff;
 }
 
@@ -235,8 +240,15 @@ figure {
        top: 20px;
        left: 30px;
        position: fixed;
+     }
 
-}
+     .site-nav {
+     z-index: 0;
+     }
+
+     .about {
+     position: relative;
+     }
 }
 
 @media screen and ( min-width: 992px ) {
@@ -244,14 +256,20 @@ figure {
     display: none;
 }
 
+body {
+padding: 0;
+}
+
 main{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  max-width: 90%;
 
 }
 
 .movie-poster {
   display:inline-block;
+
 }
 
 .movie:first-child .movie-overview {
@@ -268,6 +286,8 @@ article:first-child .movie-poster {
 article:first-child .movie-backdrop {
   display: block;
   width: 130%;
-  ;
+
 }
+
+
 }
